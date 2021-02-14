@@ -1,1 +1,0 @@
-dynamo-config.js
