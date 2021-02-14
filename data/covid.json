@@ -1,7 +1,6 @@
 [
     {
-      "nameglobe": "Global",
-    
+      "name": "Global",
       "totalCases": 108006680,
       "caseDensity": 1383.5816263321012,
       "deaths": 2378115,
