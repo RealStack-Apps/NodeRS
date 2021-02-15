@@ -29,7 +29,7 @@ module.exports = (app) => {
     const countryId = req.query.id;
     const docClient = new AWS.DynamoDB.DocumentClient();
     const params = {
-      TableName: config.aws_table_name,
+      covidGlobal: config.aws_table_name,
       KeyConditionExpression: 'countryId = :i',
       ExpressionAttributeValues: {
         ':i': countryId
