@@ -1,20 +1,24 @@
+'use strict'; 
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
+// native file system 
 const fs = require('fs');
 
+// api 
+const express = require('express');
+const app = express();
+
+// load up configuration 
+const config = require('./config'); 
+
+// middleware to parse objects / serialize json 
+const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const routes = require('./routes/routes.js')(app, fs);
+// load routes , passing router logic to routes.js
+app.use('/',routes);
 
+// start api server
 const server = app.listen(3000, () => {
     console.log('listening on port %s...', server.address().port);
 });
-
-
-
-
-// a friendly message on the terminal
-// console.log('Server running at http://127.0.0.1:' + port + '/');
