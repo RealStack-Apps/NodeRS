@@ -1,3 +1,5 @@
+module.exports = rankRoutes;
+
 const AWS = require('aws-sdk');
 const config = require('../../../config/config.js');
 const isDev = process.env.NODE_ENV !== 'production';
